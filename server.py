@@ -2,17 +2,6 @@
 # Rachel White
 # Mini Project 7
 
-"""MCP server that wraps the Practice Hub REST API.
-
-Exposes five tools (list_posts, get_post, create_post, update_post,
-delete_post) so an agent such as Claude Code can read, create, and modify
-your own posts on the Practice Hub. Runs over stdio, the default transport.
-
-Configuration comes from environment variables, never from this file:
-    PRACTICE_API_URL    base URL of the API (default https://practice.fhsucyber.com)
-    PRACTICE_API_TOKEN  your personal API token (required)
-"""
-
 import os
 
 import httpx
@@ -23,7 +12,7 @@ API_URL = os.environ.get("PRACTICE_API_URL", DEFAULT_API_URL).rstrip("/")
 API_TOKEN = os.environ.get("PRACTICE_API_TOKEN")
 TIMEOUT_SECONDS = 15.0
 
-# Friendly explanations for the status codes the Practice Hub returns.
+# Status codes the Practice Hub returns.
 ERROR_MESSAGES = {
     400: "Bad request - the API could not understand the data that was sent.",
     401: "Authentication failed - PRACTICE_API_TOKEN is missing, invalid, or expired.",

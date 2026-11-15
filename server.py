@@ -26,7 +26,7 @@ mcp = FastMCP("practice-hub")
 
 
 class PracticeHubError(Exception):
-    """Raised when a Practice Hub request fails; the message is safe to show the model."""
+    """Raised when a Practice Hub request fails"""
 
 
 def _request(method: str, path: str, **kwargs):
